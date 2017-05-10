@@ -16,6 +16,15 @@
 # 2. Sign up for a free account with OpenWeatherMap to grab your API key
 # 3. Add your OpenWeatherMap API key where it says API_KEY
 
+# Limit the rate of calls to every 5 minutes
+MINUTE=$(date +"%M")
+if [ $((MINUTE%5)) -eq 0 ] 
+then
+  WEATHER_STATUS=$(cat ~/Dropbox/weather.txt)
+  echo $WEATHER_STATUS
+exit
+fi
+
 set -e
 
 weather_icon() {
