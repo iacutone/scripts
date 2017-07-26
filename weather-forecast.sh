@@ -50,14 +50,5 @@ get_weather_data() {
   echo $WEATHER_STATUS
 }
 
-# Limit the rate of calls to every 5 minutes
-MINUTE=$(date +"%M")
-if [ $((MINUTE%5)) -eq 0 ] 
-then
-  get_weather_data
-else
-  WEATHER_STATUS=$(cat ~/Dropbox/weather.txt)
-  echo $WEATHER_STATUS
-fi
-
+get_weather_data
 
