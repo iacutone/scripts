@@ -12,6 +12,7 @@ class MailchimpEmails:
         email_request = json.loads(request.text)
         emails = {}
         for member in email_request['members']:
-            emails[member['id']] = member['email_address']
+            if member['status'] == 'subscribed':
+                emails[member['id']] = member['email_address']
 
         return emails
