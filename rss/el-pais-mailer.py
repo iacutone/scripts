@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from rss_feed import RssFeed
 from parse_article import ParseArticle
 from translate_article import TranslateArticle
