@@ -3,7 +3,7 @@
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 # Build the project.
-hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
+hugo
 
 # Go To Public folder
 cd ~/Desktop/blog/public
@@ -22,3 +22,10 @@ git push origin master
 
 # Come Back up to the Project Root
 cd ..
+
+# push changes to 'blog' repo
+echo -e "Deploying updates to 'blog' repo"
+
+git add .
+git commit -m "$msg"
+git push origin master
