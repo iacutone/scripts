@@ -10,6 +10,8 @@ elif [ "$1" == "ag" ]; then
   ag "$2" "$fpath"
 elif [ "$1" == "nvim" ]; then
   nvim "$fpath"
+elif [ "$1" == "vi" ]; then
+  nvim "$fpath"
 elif [ "$1" == "--help" ]; then
   printf 'Commands: \n-----------------------------------------------\n
   $ notes \n
