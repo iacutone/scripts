@@ -1,0 +1,39 @@
+<!--
+add the following script:
+sudo chown root:wheel plist/com.grasp.plist
+sudo launchctl load -w /Library/LaunchDaemons/com.grasp.plist
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>PATH</key>
+      <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
+    </dict>
+    <key>Label</key>
+    <string>com.grasp</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/bash</string>
+      <string>/Users/iacutone/scripts/grasp.sh</string>
+      <string>/Users/iacutone/Desktop/capture.org</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <false/>
+    <key>LaunchOnlyOnce</key>        
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/iacutone/grasp/output.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/iacutone/grasp/error.log</string>
+    <key>UserName</key>
+    <string>root</string>
+    <key>InitGroups</key>
+    <true/>
+  </dict>
+</plist>
