@@ -19,7 +19,7 @@ sudo launchctl load -w /Library/LaunchDaemons/com.grasp.plist
     <array>
       <string>/bin/bash</string>
       <string>/Users/iacutone/scripts/grasp.sh</string>
-      <string>/Users/iacutone/Desktop/capture.org</string>
+      <string>/Users/iacutone/Dropbox/orgfiles/links.org</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
