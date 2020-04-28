@@ -1,0 +1,9 @@
+Using [[https://github.com/honza/kindle-highlight-parser][this]] Go library to import Kindle text clippings as org files.
+
+- currently using the 0.4.0 version of the binary
+
+_Future Reference_
+`./kindle-highlight-parser-0.4.0 /Volumes/Kindle/documents/My\ Clippings.txt -f ~/Dropbox/orgfiles/kindle-highlights.org -o org`
+
+
+
