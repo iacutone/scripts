@@ -10,7 +10,7 @@ get_weather_data() {
   TEMP=$(echo "$FIRST_RESPONSE" | jq .temperature | sed s/\"//g)
   WIND_SPEED=$(echo "$FIRST_RESPONSE" | jq .windSpeed | sed s/\"//g)
 
-  WEATHER_STATUS="$FORECAST $TEMP $WIND_SPEED"
+  WEATHER_STATUS="$FORECAST $TEMP°F $WIND_SPEED"
   echo $WEATHER_STATUS > ~/Dropbox/weather.txt
   echo $WEATHER_STATUS
 }

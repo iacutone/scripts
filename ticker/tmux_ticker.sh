@@ -3,8 +3,7 @@
 set -e
 
 COUNTER=$(cat ~/scripts/ticker/counter.txt)
-UPDATED_COUNT=$(($COUNTER + 1))
-echo "$UPDATED_COUNT" > ~/scripts/ticker/counter.txt
+UPDATED_COUNT=$($COUNTER + 1)
 SYMBOLS=$(cat ~/scripts/ticker/ticker.conf)
 SYMBOL_COUNT=$(wc -w < ~/scripts/ticker/ticker.conf)
 SYBMOL_ARR=($SYMBOLS)
