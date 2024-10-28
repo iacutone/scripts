@@ -10,4 +10,4 @@ RESPONSE=$(curl "https://finnhub.io/api/v1/quote?symbol=$1&token=$FINNHUB")
 
 CURRENT_PRICE=$(echo "$RESPONSE" | jq .c)
 
-echo "$CURRENT_PRICE"
+echo "$1: $CURRENT_PRICE"
