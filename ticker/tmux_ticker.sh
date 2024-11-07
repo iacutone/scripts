@@ -5,7 +5,7 @@ set -e
 COUNTER=$(cat ~/scripts/ticker/counter.txt)
 UPDATED_COUNT=$(($COUNTER + 1))
 SYMBOLS=$(cat ~/scripts/ticker/ticker.conf)
-SYMBOL_COUNT=$(wc -w < ~/scripts/ticker/ticker.conf)
+SYMBOL_COUNT=$(wc -w < ~/scripts/ticker/ticker.conf | xargs)
 SYBMOL_ARR=($SYMBOLS)
 
 if (($UPDATED_COUNT == $SYMBOL_COUNT)); then
@@ -17,4 +17,5 @@ else
   RESPONSE=$(~/scripts/ticker/ticker.sh ${SYBMOL_ARR[$UPDATED_COUNT]})
   echo "$RESPONSE" > ~/Dropbox/ticker.txt
   echo "$RESPONSE"
+  echo $UPDATED_COUNT > ~/scripts/ticker/counter.txt
 fi
