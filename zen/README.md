@@ -45,9 +45,11 @@ launchd runs the job inside your login session, so the macOS banner notification
 It also catches up on runs missed while the Mac was asleep. The agent lives in
 `../plist/com.zen.check.plist` and runs every 30 minutes, plus once at load.
 
+That plist is a template. `install.sh` fills in this machine's `python3`, repo path and
+home directory, copies it to `~/Library/LaunchAgents/` and loads it (re-run it to reload):
+
 ```sh
-cp plist/com.zen.check.plist ~/Library/LaunchAgents/
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.zen.check.plist
+zen/install.sh
 
 # check that it's loaded
 launchctl list | grep com.zen.check

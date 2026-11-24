@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Per-user LaunchAgent (not a root daemon) so macOS notifications reach your session.
+This is a template: the python, repo and home placeholders are filled in by the installer.
 Install:
-  cp plist/com.zen.check.plist ~/Library/LaunchAgents/
-  launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.zen.check.plist
+  zen/install.sh
 Remove:
   launchctl bootout gui/$(id -u)/com.zen.check && rm ~/Library/LaunchAgents/com.zen.check.plist
 -->
@@ -14,8 +14,8 @@ Remove:
     <string>com.zen.check</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/opt/homebrew/bin/python3</string>
-      <string>/Users/ericiacutone/scripts/zen/check_zen.py</string>
+      <string>__PYTHON__</string>
+      <string>__REPO__/zen/check_zen.py</string>
       <string>--quiet</string>
     </array>
     <key>StartInterval</key>
@@ -23,8 +23,8 @@ Remove:
     <key>RunAtLoad</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/Users/ericiacutone/Library/Logs/zen-check.log</string>
+    <string>__HOME__/Library/Logs/zen-check.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/ericiacutone/Library/Logs/zen-check.log</string>
+    <string>__HOME__/Library/Logs/zen-check.log</string>
   </dict>
 </plist>
